@@ -15,6 +15,14 @@
     <OutputPath>..\..\..\..\output\bin\$(Configuration)</OutputPath>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
   </PropertyGroup>
+  <PropertyGroup Condition="$(RemoveWPF) != 'true' And $(WPFPath) != ''">
+    <ImportWindowsDesktopTargets>false</ImportWindowsDesktopTargets>
+    <AfterMicrosoftNETSdkTargets>$(WPFPath)/targets/Microsoft.NET.Sdk.WindowsDesktop.targets;$(MSBuildProjectDirectory)/PreventWPFReference.targets</AfterMicrosoftNETSdkTargets>
+  </PropertyGroup>
+  <ItemGroup Condition="$(RemoveWPF) != 'true' And $(WPFPath) != ''">
+    <FrameworkReference Include="Microsoft.WindowsDesktop.App" />
+  </ItemGroup>
+  <Import Project="$(WPFPath)/targets/Microsoft.NET.Sdk.WindowsDesktop.props" Condition="$(RemoveWPF) != 'true' And $(WPFPath) != ''"/>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugType>full</DebugType>
     <LangVersion>7</LangVersion>
