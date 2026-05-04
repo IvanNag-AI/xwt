@@ -1,13 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net6.0-windows10.0.17763.0</TargetFrameworks>
+    <TargetFrameworks Condition="$(RemoveWPF) != 'true' And $(RequireWPF) != 'true'">$(TargetFrameworks)-windows10.0.17763.0</TargetFrameworks>
     <EnableDefaultItems>true</EnableDefaultItems>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <Deterministic>false</Deterministic>
-    <UseWindowsForms>true</UseWindowsForms>
-    <UseWPF>true</UseWPF>
+    <UseWindowsForms Condition="$(RemoveWPF) != 'true'">true</UseWindowsForms>
+    <UseWPF Condition="$(RemoveWPF) != 'true'">true</UseWPF>
     <ReferenceWpfAeroTheme>true</ReferenceWpfAeroTheme>
     <SignAssembly>true</SignAssembly>
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
     <AssemblyOriginatorKeyFile>..\xwt.snk</AssemblyOriginatorKeyFile>
     <RootNamespace>Xwt.WPF</RootNamespace>
     <AssemblyName>Xwt.WPF</AssemblyName>
@@ -34,6 +35,9 @@
         
 This package contains the WPF toolkit backend for Xwt based applications targeting WPF (Windows Presentation Foundation).</Description>
   </PropertyGroup>
+  <ItemGroup Condition="$(RemoveWPF) == 'true'">
+    <Compile Remove="**/*" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Xwt.WPFBackend\TreeView.xaml">
       <SubType>Designer</SubType>
