@@ -11,7 +11,8 @@
     <AssemblyOriginatorKeyFile>..\xwt.snk</AssemblyOriginatorKeyFile>
     <RootNamespace>Xwt.WPF</RootNamespace>
     <AssemblyName>Xwt.WPF</AssemblyName>
-    <DefineConstants>DEBUG;NETFRAMEWORK</DefineConstants>
+    <OutputPath>..\..\..\..\output\bin\$(Configuration)</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugType>full</DebugType>
