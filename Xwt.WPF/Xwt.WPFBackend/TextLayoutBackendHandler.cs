@@ -339,7 +339,9 @@ namespace Xwt.WPFBackend
 			backgroundTextAttributes.Clear();
 			needsRebuild = false;
 			var dir = System.Windows.FlowDirection.LeftToRight;
+#pragma warning disable CS0618
 			formattedText = new System.Windows.Media.FormattedText(text, System.Globalization.CultureInfo.CurrentCulture, dir, defaultFont, 36, brush);
+#pragma warning restore
 			if (width > 0)
 				formattedText.MaxTextWidth = width;
 			if (height > 0)

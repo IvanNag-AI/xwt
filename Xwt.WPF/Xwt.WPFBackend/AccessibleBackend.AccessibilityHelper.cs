@@ -48,6 +48,9 @@ namespace Xwt.WPFBackend
 		}
 
 		// TODO: AccessibilityInUseChanged event would require listening for a top-level window' events in WndProc
-		public event EventHandler AccessibilityInUseChanged;
+		public event EventHandler AccessibilityInUseChanged {
+            add {}
+            remove {}
+        }
 	}
 }

@@ -78,7 +78,7 @@ namespace Xwt.WPFBackend
 			bool isShiftPressed = Keyboard.IsKeyDown(WpfKey.LeftShift) || Keyboard.IsKeyDown(WpfKey.RightShift);
 			switch (key)
 			{
-				case WpfKey.D0: return isShiftPressed ? Key.RightBracket : (Key)(key + D_Pos);  // 0)
+				case WpfKey.D0: return isShiftPressed ? Key.RightParenthesis : (Key)(key + D_Pos);  // 0)
 				case WpfKey.D1: return isShiftPressed ? Key.Exclamation : (Key)(key + D_Pos);   // 1!
 				case WpfKey.D2: return isShiftPressed ? Key.At : (Key)(key + D_Pos);            // 2@
 				case WpfKey.D3: return isShiftPressed ? Key.Hash : (Key)(key + D_Pos);          // 3#
@@ -87,7 +87,7 @@ namespace Xwt.WPFBackend
 				case WpfKey.D6: return isShiftPressed ? Key.Caret : (Key)(key + D_Pos);         // 6^
 				case WpfKey.D7: return isShiftPressed ? Key.Ampersand : (Key)(key + D_Pos);     // 7&
 				case WpfKey.D8: return isShiftPressed ? Key.Asterisk : (Key)(key + D_Pos);      // 8*
-				case WpfKey.D9: return isShiftPressed ? Key.LeftBracket : (Key)(key + D_Pos);   // 9(
+				case WpfKey.D9: return isShiftPressed ? Key.LeftParenthesis : (Key)(key + D_Pos);   // 9(
 			}
 
 			// Numpad- keys

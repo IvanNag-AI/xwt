@@ -94,7 +94,7 @@ namespace Xwt.WPFBackend
             CellViewBackend.Load(this);
             CellViewBackend.ApplicationContext.InvokeUserCode(delegate
 			{
-                var s = ((ICanvasCellViewFrontend)CellViewBackend.CellView).GetRequiredSize();
+                var s = ((ICanvasCellViewFrontend)CellViewBackend.CellView).GetRequiredSize(SizeConstraint.Unconstrained);
 				size = new System.Windows.Size(s.Width, s.Height);
 			});
 			if (size.Width > constraint.Width)

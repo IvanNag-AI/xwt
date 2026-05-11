@@ -113,7 +113,7 @@ namespace Xwt.WPFBackend
 				fontSize = AdornedComboBox.FontSize;
 				typeFace = AdornedComboBox.FontFamily.GetTypefaces ().FirstOrDefault ();
 			}
-			var text = new System.Windows.Media.FormattedText (PlaceholderText ?? "", CultureInfo.CurrentCulture, flowDirection, typeFace, fontSize, System.Windows.Media.Brushes.LightGray);
+			var text = new System.Windows.Media.FormattedText (PlaceholderText ?? "", CultureInfo.CurrentCulture, flowDirection, typeFace, fontSize, System.Windows.Media.Brushes.LightGray, VisualTreeHelper.GetDpi(this).PixelsPerDip);
 
 
 			if (!multiline)
