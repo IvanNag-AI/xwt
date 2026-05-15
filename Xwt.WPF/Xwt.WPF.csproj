@@ -3,7 +3,6 @@
     <TargetFrameworks Condition="$(RemoveWPF) != 'true' And $(RequireWPF) != 'true'">$(TargetFrameworks)-windows10.0.17763.0</TargetFrameworks>
     <EnableDefaultItems>true</EnableDefaultItems>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <Deterministic>false</Deterministic>
     <UseWindowsForms Condition="$(RemoveWPF) != 'true'">true</UseWindowsForms>
     <UseWPF Condition="$(RemoveWPF) != 'true'">true</UseWPF>
     <ReferenceWpfAeroTheme>true</ReferenceWpfAeroTheme>
