@@ -12,6 +12,8 @@
     <NoWarn>0612, 0618, CS8002</NoWarn>
     <OutputPath>..\..\..\..\output\bin\$(Configuration)</OutputPath>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <!-- GtkSharp downloads and installs GTK locally on Windows. We don't use GTK on Windows, so let's not download things unnecessarily -->
+    <SkipGtkInstall>true</SkipGtkInstall>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>True</DebugSymbols>
